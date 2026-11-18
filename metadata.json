@@ -1,0 +1,6 @@
+{
+  "name": "AirAware AI — Urban Air Quality Assistant",
+  "description": "Breathe Smarter. Live Healthier. Real-time urban air quality dashboard with Open-Meteo pollutant telemetry, forecast charts, multi-city comparison, and server-side Google Gemini AI health guidance.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
