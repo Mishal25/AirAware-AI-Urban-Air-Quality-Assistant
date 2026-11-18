@@ -1,0 +1,10 @@
+<svg width="1280" height="720" viewBox="0 0 1280 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1280" height="720" rx="20" fill="#F8FAFC"/>
+  <rect x="2" y="2" width="1276" height="716" rx="18" stroke="#94A3B8" stroke-width="2" stroke-dasharray="10 8"/>
+  <rect x="300" y="210" width="680" height="300" rx="18" fill="#FFFFFF" stroke="#BAE6FD" stroke-width="1.5"/>
+  <text x="640" y="275" text-anchor="middle" fill="#0F766E" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14" font-weight="700">SCREENSHOT PLACEHOLDER 05 / 07</text>
+  <text x="640" y="325" text-anchor="middle" fill="#0F172A" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="28" font-weight="800">City Comparison</text>
+  <text x="640" y="366" text-anchor="middle" fill="#475569" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="15">Capture multi-city AQI bars, side-by-side matrix, and Gemini city comparison</text>
+  <text x="640" y="420" text-anchor="middle" fill="#0369A1" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14" font-weight="600">Replace: docs/screenshots/05-city-comparison.png</text>
+  <text x="640" y="452" text-anchor="middle" fill="#64748B" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13">Then update the image link in README.md to point to your .png capture</text>
+</svg>

@@ -2,7 +2,13 @@ node_modules/
 build/
 dist/
 coverage/
+.vercel/
 .DS_Store
 *.log
 .env*
 !.env.example
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.webm

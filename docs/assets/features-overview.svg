@@ -1,0 +1,41 @@
+<svg width="1120" height="250" viewBox="0 0 1120 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1120" height="250" rx="20" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+
+  <!-- Card 1 -->
+  <rect x="24" y="24" width="252" height="202" rx="14" fill="#F0F9FF" stroke="#BAE6FD"/>
+  <circle cx="58" cy="60" r="18" fill="#0284C7"/>
+  <circle cx="58" cy="60" r="8" stroke="#FFFFFF" stroke-width="2.5"/>
+  <text x="40" y="108" fill="#0F172A" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="15" font-weight="700">Live City AQI</text>
+  <text x="40" y="132" fill="#475569" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12">US EPA (0-500) &amp; European EAQI</text>
+  <text x="40" y="150" fill="#475569" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12">with city search &amp; GPS detection.</text>
+  <text x="40" y="198" fill="#0369A1" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" font-weight="700">PM2.5 · PM10 · CO · NO2 · SO2 · O3</text>
+
+  <!-- Card 2 -->
+  <rect x="296" y="24" width="252" height="202" rx="14" fill="#F0FDFA" stroke="#99F6E4"/>
+  <circle cx="330" cy="60" r="18" fill="#0F766E"/>
+  <path d="M322 65L327 59L332 62L339 54" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="312" y="108" fill="#0F172A" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="15" font-weight="700">72h Forecast Analytics</text>
+  <text x="312" y="132" fill="#475569" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12">Interactive SVG line charts, WHO</text>
+  <text x="312" y="150" fill="#475569" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12">baselines &amp; cleanest 3h windows.</text>
+  <text x="312" y="198" fill="#0F766E" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" font-weight="700">24H / 48H / 72H PROJECTIONS</text>
+
+  <!-- Card 3 -->
+  <rect x="568" y="24" width="252" height="202" rx="14" fill="#F8FAFC" stroke="#CBD5E1"/>
+  <circle cx="602" cy="60" r="18" fill="#0F172A"/>
+  <rect x="594" y="54" width="16" height="12" rx="3" stroke="#E0F2FE" stroke-width="2"/>
+  <text x="584" y="108" fill="#0F172A" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="15" font-weight="700">Gemini AI Advisor</text>
+  <text x="584" y="132" fill="#475569" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12">Plain-language health briefings</text>
+  <text x="584" y="150" fill="#475569" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12">&amp; grounded multi-turn Q&amp;A chat.</text>
+  <text x="584" y="198" fill="#0F766E" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" font-weight="700">SERVER-SIDE GEMINI SDK</text>
+
+  <!-- Card 4 -->
+  <rect x="840" y="24" width="256" height="202" rx="14" fill="#F0F9FF" stroke="#BAE6FD"/>
+  <circle cx="874" cy="60" r="18" fill="#0D9488"/>
+  <line x1="867" y1="66" x2="867" y2="57" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="874" y1="66" x2="874" y2="52" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="881" y1="66" x2="881" y2="60" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
+  <text x="856" y="108" fill="#0F172A" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="15" font-weight="700">Multi-City Compare</text>
+  <text x="856" y="132" fill="#475569" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12">Side-by-side matrix for up to 4</text>
+  <text x="856" y="150" fill="#475569" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12">cities + Gemini city comparison.</text>
+  <text x="856" y="198" fill="#0369A1" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" font-weight="700">LIVE BENCHMARKING</text>
+</svg>

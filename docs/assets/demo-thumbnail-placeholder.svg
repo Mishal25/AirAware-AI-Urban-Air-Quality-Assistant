@@ -1,0 +1,10 @@
+<svg width="1280" height="720" viewBox="0 0 1280 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1280" height="720" rx="24" fill="#F0F9FF"/>
+  <rect x="2" y="2" width="1276" height="716" rx="22" stroke="#0284C7" stroke-width="2" stroke-dasharray="10 8"/>
+  <rect x="380" y="230" width="520" height="260" rx="20" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
+  <circle cx="640" cy="316" r="38" fill="#0F766E"/>
+  <polygon points="628,298 628,334 660,316" fill="#FFFFFF"/>
+  <text x="640" y="388" text-anchor="middle" fill="#0F172A" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="22" font-weight="700">DEMO VIDEO THUMBNAIL PLACEHOLDER</text>
+  <text x="640" y="420" text-anchor="middle" fill="#475569" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="15">Replace with your YouTube thumbnail or recorded walkthrough cover image</text>
+  <text x="640" y="452" text-anchor="middle" fill="#0F766E" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="600">docs/assets/demo-thumbnail-placeholder.svg (1280x720)</text>
+</svg>

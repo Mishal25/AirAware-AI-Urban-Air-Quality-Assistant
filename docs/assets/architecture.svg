@@ -1,0 +1,61 @@
+<svg width="1120" height="440" viewBox="0 0 1120 440" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1120" height="440" rx="20" fill="#F8FAFC"/>
+  <rect x="0.75" y="0.75" width="1118.5" height="438.5" rx="19.25" stroke="#CBD5E1" stroke-width="1.5"/>
+
+  <text x="40" y="46" fill="#0F172A" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="20" font-weight="700">AirAware AI — Full-Stack System Architecture</text>
+  <text x="40" y="68" fill="#475569" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13">Secure server-side proxy architecture keeping API keys isolated from client bundles</text>
+
+  <!-- Column 1: Client Frontend -->
+  <rect x="40" y="102" width="300" height="292" rx="16" fill="#FFFFFF" stroke="#BAE6FD" stroke-width="1.5"/>
+  <rect x="40" y="102" width="300" height="44" rx="16" fill="#F0F9FF"/>
+  <text x="60" y="129" fill="#0369A1" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="14" font-weight="700">1. Client SPA (React + TS)</text>
+  <text x="60" y="174" fill="#0F172A" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" font-weight="600">UI Workspace Views</text>
+  <text x="60" y="196" fill="#475569" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12">• Collapsible SaaS Sidebar &amp; TopBar</text>
+  <text x="60" y="216" fill="#475569" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12">• Circular AQI Gauge &amp; 6 Pollutant Cards</text>
+  <text x="60" y="236" fill="#475569" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12">• 72h Forecast SVG Charts &amp; Sparklines</text>
+  <text x="60" y="256" fill="#475569" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12">• Multi-City Comparison &amp; Education</text>
+  <text x="60" y="276" fill="#475569" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12">• Browser Geolocation (Opt-In)</text>
+  <rect x="60" y="308" width="260" height="62" rx="10" fill="#F8FAFC" stroke="#E2E8F0"/>
+  <text x="74" y="331" fill="#0F766E" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" font-weight="700">src/services/api.ts</text>
+  <text x="74" y="351" fill="#64748B" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11">Calls only internal /api/* endpoints</text>
+
+  <!-- Arrow 1 -> 2 -->
+  <line x1="340" y1="248" x2="398" y2="248" stroke="#0F766E" stroke-width="2.5"/>
+  <polygon points="398,242 410,248 398,254" fill="#0F766E"/>
+  <text x="375" y="234" text-anchor="middle" fill="#0F766E" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10" font-weight="700">REST JSON</text>
+
+  <!-- Column 2: Express Server -->
+  <rect x="410" y="102" width="300" height="292" rx="16" fill="#FFFFFF" stroke="#99F6E4" stroke-width="1.5"/>
+  <rect x="410" y="102" width="300" height="44" rx="16" fill="#F0FDFA"/>
+  <text x="430" y="129" fill="#0F766E" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="14" font-weight="700">2. Backend Server (server.ts)</text>
+  <text x="430" y="174" fill="#0F172A" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" font-weight="700">GET /api/air-quality</text>
+  <text x="430" y="194" fill="#475569" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12">Validates lat/lon &amp; normalizes telemetry</text>
+  <text x="430" y="222" fill="#0F172A" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" font-weight="700">GET /api/geocode &amp; /reverse-geocode</text>
+  <text x="430" y="242" fill="#475569" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12">Resolves cities &amp; GPS coordinates</text>
+  <text x="430" y="270" fill="#0F172A" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" font-weight="700">POST /api/ai/insights | /chat | /compare</text>
+  <text x="430" y="290" fill="#475569" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12">Injects real telemetry into Gemini prompts</text>
+  <rect x="430" y="314" width="260" height="56" rx="10" fill="#FEF3C7" stroke="#FDE68A"/>
+  <text x="444" y="337" fill="#92400E" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" font-weight="700">process.env.GEMINI_API_KEY</text>
+  <text x="444" y="355" fill="#78350F" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11">Server-only secret · Never sent to browser</text>
+
+  <!-- Arrows 2 -> 3 -->
+  <line x1="710" y1="184" x2="768" y2="184" stroke="#0284C7" stroke-width="2.5"/>
+  <polygon points="768,178 780,184 768,190" fill="#0284C7"/>
+  <line x1="710" y1="318" x2="768" y2="318" stroke="#0F766E" stroke-width="2.5"/>
+  <polygon points="768,312 780,318 768,324" fill="#0F766E"/>
+
+  <!-- Column 3: External APIs -->
+  <rect x="780" y="102" width="300" height="140" rx="16" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
+  <text x="800" y="132" fill="#0369A1" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="14" font-weight="700">3A. Environmental Data APIs</text>
+  <text x="800" y="160" fill="#0F172A" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" font-weight="600">• Open-Meteo Air Quality API (CAMS)</text>
+  <text x="800" y="182" fill="#0F172A" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" font-weight="600">• Open-Meteo Geocoding API</text>
+  <text x="800" y="204" fill="#0F172A" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" font-weight="600">• BigDataCloud Reverse Geocode</text>
+  <text x="800" y="226" fill="#64748B" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11">Live PM2.5, PM10, CO, NO2, SO2, O3, 72h forecast</text>
+
+  <rect x="780" y="260" width="300" height="134" rx="16" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
+  <text x="800" y="290" fill="#0F766E" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="14" font-weight="700">3B. Google Gemini AI</text>
+  <text x="800" y="318" fill="#0F172A" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" font-weight="700">@google/genai · gemini-4-hydrogen</text>
+  <text x="800" y="342" fill="#475569" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12">• Structured JSON health briefings</text>
+  <text x="800" y="362" fill="#475569" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12">• Grounded Q&amp;A &amp; city comparison</text>
+  <text x="800" y="382" fill="#64748B" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11">No fabricated values · Informational only</text>
+</svg>
