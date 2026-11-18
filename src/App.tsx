@@ -87,7 +87,7 @@ export default function App() {
 
   const handleUseCurrentLocation = () => {
     if (!('geolocation' in navigator)) {
-      setLocationError('Geolocation is not supported by your browser.');
+      setLocationError('Geolocation is not supported by your browser. Please search for your city below.');
       return;
     }
 
@@ -96,14 +96,25 @@ export default function App() {
 
     navigator.geolocation.getCurrentPosition(
       async (position) => {
+        const { latitude, longitude } = position.coords;
+        if (!Number.isFinite(latitude) || !Number.isFinite(longitude)) {
+          setIsLocating(false);
+          setLocationError('Device returned invalid GPS coordinates. Please search for your city manually.');
+          return;
+        }
+
         try {
-          const { latitude, longitude } = position.coords;
           const resolvedLocation = await reverseGeocode(latitude, longitude);
           setSelectedLocation(resolvedLocation);
-        } catch (err) {
-          setLocationError(
-            err instanceof Error ? err.message : 'Unable to resolve your current coordinates.'
-          );
+        } catch {
+          setSelectedLocation({
+            id: `gps-${latitude.toFixed(3)}-${longitude.toFixed(3)}`,
+            name: `Current Location (${latitude.toFixed(2)}, ${longitude.toFixed(2)})`,
+            country: 'GPS Coordinates',
+            latitude,
+            longitude,
+            isCurrentLocation: true,
+          });
         } finally {
           setIsLocating(false);
         }
@@ -111,11 +122,11 @@ export default function App() {
       (geoErr) => {
         setIsLocating(false);
         if (geoErr.code === geoErr.PERMISSION_DENIED) {
-          setLocationError('Location permission was denied. Please search for your city manually.');
+          setLocationError('Location permission was denied. Use the city search bar or quick stations below.');
         } else if (geoErr.code === geoErr.TIMEOUT) {
           setLocationError('Location request timed out. Please try again or search by city name.');
         } else {
-          setLocationError('Unable to determine your current location.');
+          setLocationError('Unable to detect your device location. Please search for a city manually.');
         }
       },
       { enableHighAccuracy: false, timeout: 10000, maximumAge: 300000 }
@@ -160,34 +171,50 @@ export default function App() {
   const renderErrorState = () => (
     <div
       role="alert"
-      className="bg-white border border-rose-200 rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center justify-between gap-6"
+      className="bg-white border border-rose-200 rounded-2xl p-6 sm:p-8 space-y-5"
     >
-      <div className="flex items-start gap-3.5">
-        <AlertTriangle className="w-6 h-6 text-rose-700 shrink-0 mt-0.5" aria-hidden="true" />
-        <div>
-          <h2 className="font-display text-lg font-bold text-slate-900">
-            Live Air Quality Service Unavailable
-          </h2>
-          <p className="mt-1 text-sm text-slate-600 max-w-2xl">{apiError}</p>
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+        <div className="flex items-start gap-3.5">
+          <AlertTriangle className="w-6 h-6 text-rose-700 shrink-0 mt-0.5" aria-hidden="true" />
+          <div>
+            <h2 className="font-display text-lg font-bold text-slate-900">
+              Live Air Quality Service Unavailable
+            </h2>
+            <p className="mt-1 text-sm text-slate-600 max-w-2xl">{apiError}</p>
+          </div>
+        </div>
+
+        <div className="flex flex-wrap items-center gap-3 shrink-0">
+          <button
+            type="button"
+            onClick={() => void loadCityAirQuality(selectedLocation)}
+            className="inline-flex items-center gap-2 px-4 py-2 text-xs font-medium text-white bg-teal-700 hover:bg-teal-800 rounded-xl transition-colors"
+          >
+            <RefreshCw className="w-3.5 h-3.5" />
+            <span>Retry Live Data</span>
+          </button>
+          <button
+            type="button"
+            onClick={handleLoadDemoFallback}
+            className="px-4 py-2 text-xs font-medium text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-xl transition-colors"
+          >
+            Load Labeled Demo Data
+          </button>
         </div>
       </div>
 
-      <div className="flex flex-wrap items-center gap-3 shrink-0">
-        <button
-          type="button"
-          onClick={() => void loadCityAirQuality(selectedLocation)}
-          className="inline-flex items-center gap-2 px-4 py-2 text-xs font-medium text-white bg-teal-700 hover:bg-teal-800 rounded-xl transition-colors"
-        >
-          <RefreshCw className="w-3.5 h-3.5" />
-          <span>Retry Live Data</span>
-        </button>
-        <button
-          type="button"
-          onClick={handleLoadDemoFallback}
-          className="px-4 py-2 text-xs font-medium text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-xl transition-colors"
-        >
-          Load Labeled Demo Data
-        </button>
+      <div className="pt-4 border-t border-slate-100 flex flex-wrap items-center gap-2">
+        <span className="text-xs text-slate-500 mr-1">Or try a station:</span>
+        {PRESET_CITIES.slice(0, 4).map((city) => (
+          <button
+            key={city.id}
+            type="button"
+            onClick={() => handleSelectLocation(city)}
+            className="px-3 py-1.5 text-xs font-medium bg-sky-50 hover:bg-sky-100 text-teal-800 border border-sky-200 rounded-lg transition-colors"
+          >
+            {city.name}
+          </button>
+        ))}
       </div>
     </div>
   );
